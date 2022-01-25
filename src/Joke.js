@@ -25,8 +25,20 @@ import "./Joke.css";
 // }
 
 class Joke extends React.Component{
+  constructor(props) {
+    super(props);
+    this.upVote = this.upVote.bind(this);
+    this.downVote = this.downVote.bind(this);
+    console.log(this.props.id);
+  }
+  
+  upVote() {
+    this.props.vote(this.props.id, 1);
+  }
 
-  // TODO: upVote, downVote
+  downVote() {
+    this.props.vote(this.props.id, -1);
+  }
 
   render() {
     return (
